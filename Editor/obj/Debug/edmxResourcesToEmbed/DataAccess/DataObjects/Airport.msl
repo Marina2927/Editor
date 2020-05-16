@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище AirportModelContainer" CdmEntityContainer="AirportEntities">
+    <EntitySetMapping Name="Cities">
+      <EntityTypeMapping TypeName="AirportModel.City">
+        <MappingFragment StoreEntitySet="Cities">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Routes">
+      <EntityTypeMapping TypeName="AirportModel.Route">
+        <MappingFragment StoreEntitySet="Routes">
+          <ScalarProperty Name="Distance" ColumnName="Distance" />
+          <ScalarProperty Name="Finish" ColumnName="Finish" />
+          <ScalarProperty Name="Start" ColumnName="Start" />
+          <ScalarProperty Name="RouteID" ColumnName="RouteID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AirportRoutes">
+      <EntityTypeMapping TypeName="AirportModel.AirportRoute">
+        <MappingFragment StoreEntitySet="AirportRoutes">
+          <ScalarProperty Name="Finish" ColumnName="Finuish" />
+          <ScalarProperty Name="Start" ColumnName="Start" />
+          <ScalarProperty Name="AirportRouteID" ColumnName="AirportRouteID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Times">
+      <EntityTypeMapping TypeName="AirportModel.Time">
+        <MappingFragment StoreEntitySet="Times">
+          <ScalarProperty Name="FinishMin" ColumnName="FinuishMin" />
+          <ScalarProperty Name="FinishHour" ColumnName="FinuishHour" />
+          <ScalarProperty Name="StartMin" ColumnName="StartMin" />
+          <ScalarProperty Name="StartHour" ColumnName="StartHour" />
+          <ScalarProperty Name="Finish" ColumnName="Finuish" />
+          <ScalarProperty Name="Start" ColumnName="Start" />
+          <ScalarProperty Name="TimeID" ColumnName="TimeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Limits">
+      <EntityTypeMapping TypeName="AirportModel.Limit">
+        <MappingFragment StoreEntitySet="Limits">
+          <ScalarProperty Name="DistanceFinish" ColumnName="DistanceFinish" />
+          <ScalarProperty Name="DistanceStart" ColumnName="DistanceStart" />
+          <ScalarProperty Name="SpeedFinish" ColumnName="SpeedFinish" />
+          <ScalarProperty Name="SpeedStart" ColumnName="SpeedStart" />
+          <ScalarProperty Name="PlaneType" ColumnName="PlaneType" />
+          <ScalarProperty Name="LimitID" ColumnName="LimitID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Planes">
+      <EntityTypeMapping TypeName="AirportModel.Plane">
+        <MappingFragment StoreEntitySet="Planes">
+          <ScalarProperty Name="Speed" ColumnName="Speed" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="PlaneID" ColumnName="PlaneID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7d0914280b074492a7360ed37f0a034f" Name="Diagram1">
+        <EntityTypeShape EntityType="AirportModel.City" Width="1.5" PointX="0.5" PointY="0.875" />
+        <EntityTypeShape EntityType="AirportModel.Route" Width="1.5" PointX="2.375" PointY="0.875" />
+        <EntityTypeShape EntityType="AirportModel.AirportRoute" Width="1.5" PointX="2.375" PointY="3.125" />
+        <EntityTypeShape EntityType="AirportModel.Time" Width="1.5" PointX="4.25" PointY="3.125" />
+        <EntityTypeShape EntityType="AirportModel.Limit" Width="1.5" PointX="4.25" PointY="0.875" />
+        <EntityTypeShape EntityType="AirportModel.Plane" Width="1.5" PointX="0.5" PointY="3.125" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

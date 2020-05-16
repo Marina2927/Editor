@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище AirportModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AirportRoutes">
+          <Key>
+            <PropertyRef Name="AirportRouteID" />
+          </Key>
+          <Property Name="AirportRouteID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Start" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Finuish" Type="varchar" MaxLength="40" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cities">
+          <Key>
+            <PropertyRef Name="CityID" />
+          </Key>
+          <Property Name="CityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="40" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Limits">
+          <Key>
+            <PropertyRef Name="LimitID" />
+          </Key>
+          <Property Name="LimitID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PlaneType" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="SpeedStart" Type="int" Nullable="false" />
+          <Property Name="SpeedFinish" Type="int" Nullable="false" />
+          <Property Name="DistanceStart" Type="int" Nullable="false" />
+          <Property Name="DistanceFinish" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Planes">
+          <Key>
+            <PropertyRef Name="PlaneID" />
+          </Key>
+          <Property Name="PlaneID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Number" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Speed" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Routes">
+          <Key>
+            <PropertyRef Name="RouteID" />
+          </Key>
+          <Property Name="RouteID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Start" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Finish" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Distance" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Times">
+          <Key>
+            <PropertyRef Name="TimeID" />
+          </Key>
+          <Property Name="TimeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Start" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="Finuish" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="StartHour" Type="int" Nullable="false" />
+          <Property Name="StartMin" Type="int" Nullable="false" />
+          <Property Name="FinuishHour" Type="int" Nullable="false" />
+          <Property Name="FinuishMin" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Хранилище AirportModelContainer">
+          <EntitySet Name="AirportRoutes" EntityType="Self.AirportRoutes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cities" EntityType="Self.Cities" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Limits" EntityType="Self.Limits" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Planes" EntityType="Self.Planes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Routes" EntityType="Self.Routes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Times" EntityType="Self.Times" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AirportModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="AirportEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cities" EntityType="AirportModel.City" />
+          <EntitySet Name="Routes" EntityType="AirportModel.Route" />
+          <EntitySet Name="AirportRoutes" EntityType="AirportModel.AirportRoute" />
+          <EntitySet Name="Times" EntityType="AirportModel.Time" />
+          <EntitySet Name="Limits" EntityType="AirportModel.Limit" />
+          <EntitySet Name="Planes" EntityType="AirportModel.Plane" />
+        </EntityContainer>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="CityID" />
+          </Key>
+          <Property Name="CityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Route">
+          <Key>
+            <PropertyRef Name="RouteID" />
+          </Key>
+          <Property Name="RouteID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Start" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Finish" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Distance" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AirportRoute">
+          <Key>
+            <PropertyRef Name="AirportRouteID" />
+          </Key>
+          <Property Name="AirportRouteID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Start" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Finish" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Time">
+          <Key>
+            <PropertyRef Name="TimeID" />
+          </Key>
+          <Property Name="TimeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Start" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Finish" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="StartHour" Type="Int32" Nullable="false" />
+          <Property Name="StartMin" Type="Int32" Nullable="false" />
+          <Property Name="FinishHour" Type="Int32" Nullable="false" />
+          <Property Name="FinishMin" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Limit">
+          <Key>
+            <PropertyRef Name="LimitID" />
+          </Key>
+          <Property Name="LimitID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PlaneType" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="SpeedStart" Type="Int32" Nullable="false" />
+          <Property Name="SpeedFinish" Type="Int32" Nullable="false" />
+          <Property Name="DistanceStart" Type="Int32" Nullable="false" />
+          <Property Name="DistanceFinish" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Plane">
+          <Key>
+            <PropertyRef Name="PlaneID" />
+          </Key>
+          <Property Name="PlaneID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Number" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="Speed" Type="Int32" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище AirportModelContainer" CdmEntityContainer="AirportEntities">
+          <EntitySetMapping Name="Cities">
+            <EntityTypeMapping TypeName="AirportModel.City">
+              <MappingFragment StoreEntitySet="Cities">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CityID" ColumnName="CityID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Routes">
+            <EntityTypeMapping TypeName="AirportModel.Route">
+              <MappingFragment StoreEntitySet="Routes">
+                <ScalarProperty Name="Distance" ColumnName="Distance" />
+                <ScalarProperty Name="Finish" ColumnName="Finish" />
+                <ScalarProperty Name="Start" ColumnName="Start" />
+                <ScalarProperty Name="RouteID" ColumnName="RouteID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AirportRoutes">
+            <EntityTypeMapping TypeName="AirportModel.AirportRoute">
+              <MappingFragment StoreEntitySet="AirportRoutes">
+                <ScalarProperty Name="Finish" ColumnName="Finuish" />
+                <ScalarProperty Name="Start" ColumnName="Start" />
+                <ScalarProperty Name="AirportRouteID" ColumnName="AirportRouteID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Times">
+            <EntityTypeMapping TypeName="AirportModel.Time">
+              <MappingFragment StoreEntitySet="Times">
+                <ScalarProperty Name="FinishMin" ColumnName="FinuishMin" />
+                <ScalarProperty Name="FinishHour" ColumnName="FinuishHour" />
+                <ScalarProperty Name="StartMin" ColumnName="StartMin" />
+                <ScalarProperty Name="StartHour" ColumnName="StartHour" />
+                <ScalarProperty Name="Finish" ColumnName="Finuish" />
+                <ScalarProperty Name="Start" ColumnName="Start" />
+                <ScalarProperty Name="TimeID" ColumnName="TimeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Limits">
+            <EntityTypeMapping TypeName="AirportModel.Limit">
+              <MappingFragment StoreEntitySet="Limits">
+                <ScalarProperty Name="DistanceFinish" ColumnName="DistanceFinish" />
+                <ScalarProperty Name="DistanceStart" ColumnName="DistanceStart" />
+                <ScalarProperty Name="SpeedFinish" ColumnName="SpeedFinish" />
+                <ScalarProperty Name="SpeedStart" ColumnName="SpeedStart" />
+                <ScalarProperty Name="PlaneType" ColumnName="PlaneType" />
+                <ScalarProperty Name="LimitID" ColumnName="LimitID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Planes">
+            <EntityTypeMapping TypeName="AirportModel.Plane">
+              <MappingFragment StoreEntitySet="Planes">
+                <ScalarProperty Name="Speed" ColumnName="Speed" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="PlaneID" ColumnName="PlaneID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

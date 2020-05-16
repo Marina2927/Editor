@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AirportModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="AirportEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cities" EntityType="AirportModel.City" />
+    <EntitySet Name="Routes" EntityType="AirportModel.Route" />
+    <EntitySet Name="AirportRoutes" EntityType="AirportModel.AirportRoute" />
+    <EntitySet Name="Times" EntityType="AirportModel.Time" />
+    <EntitySet Name="Limits" EntityType="AirportModel.Limit" />
+    <EntitySet Name="Planes" EntityType="AirportModel.Plane" />
+  </EntityContainer>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Route">
+    <Key>
+      <PropertyRef Name="RouteID" />
+    </Key>
+    <Property Name="RouteID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Start" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="Finish" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="Distance" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AirportRoute">
+    <Key>
+      <PropertyRef Name="AirportRouteID" />
+    </Key>
+    <Property Name="AirportRouteID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Start" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="Finish" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Time">
+    <Key>
+      <PropertyRef Name="TimeID" />
+    </Key>
+    <Property Name="TimeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Start" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="Finish" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="StartHour" Type="Int32" Nullable="false" />
+    <Property Name="StartMin" Type="Int32" Nullable="false" />
+    <Property Name="FinishHour" Type="Int32" Nullable="false" />
+    <Property Name="FinishMin" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Limit">
+    <Key>
+      <PropertyRef Name="LimitID" />
+    </Key>
+    <Property Name="LimitID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PlaneType" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="SpeedStart" Type="Int32" Nullable="false" />
+    <Property Name="SpeedFinish" Type="Int32" Nullable="false" />
+    <Property Name="DistanceStart" Type="Int32" Nullable="false" />
+    <Property Name="DistanceFinish" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Plane">
+    <Key>
+      <PropertyRef Name="PlaneID" />
+    </Key>
+    <Property Name="PlaneID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Number" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="Speed" Type="Int32" Nullable="false" />
+  </EntityType>
+</Schema>
